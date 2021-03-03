@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    android:background="@color/white"
+    tools:context=".Signup">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+    <TextView
+        android:id="@+id/email"
+        android:fontFamily="@font/avenir_heavy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="52dp"
+        android:text="Connect email address"
+        android:textColor="#e9707d"
+        android:textSize="26sp" />
+
+    <TextView
+        android:fontFamily="@font/avenir_book"
+        android:layout_below="@+id/email"
+        android:id="@+id/recommend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="It’s recommended to connect your email\naddress for us to bettrt protect your\ninformation."
+        android:textColor="#333a4d"
+        android:textSize="16sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_below="@+id/recommend"
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:textColorHint="#bec2ce">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your Email"
+            android:textSize="17sp"
+            android:textColor="#1e2432"
+            android:inputType="textEmailAddress"
+            android:fontFamily="@font/avenir_book"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_below="@+id/et_email"
+        android:id="@+id/hide_show_android_edittext_password1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:textColorHint="#bec2ce">
+
+    <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
+        android:layout_below="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:drawableEnd="@drawable/ic_closed_eye"
+        android:hint="Password"
+        app:drawable_hide="@drawable/ic_visibility"
+        app:drawable_show="@drawable/ic_closed_eye"
+        android:paddingLeft="13dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16.7dp"
+        android:paddingRight="12dp"
+        android:maxLength="7"
+        android:textSize="14sp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:fontFamily="@font/avenir_heavy"
+        android:layout_below="@+id/hide_show_android_edittext_password1"
+        android:id="@+id/tv_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="41dp"
+        android:layout_marginTop="121dp"
+        android:layout_marginRight="41dp"
+        android:background="@drawable/rect_pink_radius"
+        android:gravity="center"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
+        android:text="CONFIRM"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:fontFamily="@font/avenir_heavy"
+        android:id="@+id/skip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SKIP"
+        android:paddingBottom="21dp"
+        android:textColor="#303030"
+        android:textSize="16sp" />
+
+</RelativeLayout>

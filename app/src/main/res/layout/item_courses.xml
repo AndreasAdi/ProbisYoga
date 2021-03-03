@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="4dp"
+    android:layout_weight="1"
+    android:layout_marginRight="12dp"
+    app:cardElevation="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_yoga"
+                android:layout_width="match_parent"
+                android:layout_height="127dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/yoga_poses" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="11dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:fontFamily="@font/avenir_heavy"
+                    android:id="@+id/tv_week"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rect_white"
+                    android:paddingLeft="7.5dp"
+                    android:paddingTop="2dp"
+                    android:paddingRight="7.5dp"
+                    android:paddingBottom="2dp"
+                    android:text="1 WEEK"
+                    android:textColor="#7e7d7d"
+                    android:textSize="8sp" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <TextView
+            android:paddingLeft="16dp"
+            android:paddingRight="32dp"
+            android:paddingTop="13dp"
+            android:fontFamily="@font/avenir_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7 Day Core Strength Building"
+            android:textColor="@color/black"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:paddingLeft="16dp"
+            android:paddingBottom="12dp"
+            android:fontFamily="@font/avenir_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lever 2"
+            android:textColor="#a4a2a2"
+            android:textSize="13sp"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".TopicDetailComment">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:clipToPadding="false"
+        android:paddingBottom="130dp"
+        android:scrollbars="none">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f3f3f3"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginBottom="26dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/lemon_chicken" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginBottom="14dp"
+                android:text="Swap the stock with some bone broth (I like\nBonafide Provisions, which, surprise surprise, is\nalso stored in the freezer) and you've got a\nperfect, customizable gut-healing meal."
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#0d000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20.5dp"
+                android:gravity="right"
+                android:orientation="horizontal"
+                android:paddingTop="14.8dp"
+                android:paddingBottom="15.9dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_like_pink" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4.4dp"
+                    android:text="410"
+                    android:textColor="#a4a2a2"
+                    android:textSize="11sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:src="@drawable/ic_comment" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="79"
+                    android:textColor="#a4a2a2"
+                    android:textSize="11sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="21.5dp"
+                    android:src="@drawable/ic_share" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingTop="14dp"
+                android:paddingRight="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Comment"
+                        android:textColor="@color/black"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="More"
+                        android:textColor="#a4a2a2"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="28dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:orientation="horizontal">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="49dp"
+                            android:layout_height="49dp"
+                            android:src="@drawable/profile" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="13dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/avenir_heavy"
+                                    android:text="LeDae Anderson"
+                                    android:textColor="@color/black"
+                                    android:textSize="17sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/avenir_book"
+                                    android:text="2019-06-10"
+                                    android:textColor="#a4a2a2"
+                                    android:textSize="13sp" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="13dp"
+                                android:layout_marginTop="4dp"
+                                android:fontFamily="@font/avenir_book"
+                                android:text="My husband made the lemon chicken\nTuesday night. Delicious!"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="13dp"
+                                android:layout_marginTop="14dp"
+                                android:fontFamily="@font/avenir_book"
+                                android:text="Read more"
+                                android:textColor="#007aff"
+                                android:textSize="13sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="13dp"
+                                android:layout_marginTop="15dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/c1" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="8dp"
+                                    android:src="@drawable/c1" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="8dp"
+                                    android:src="@drawable/c1" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="#f3f3f3" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="28dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:orientation="horizontal">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="49dp"
+                            android:layout_height="49dp"
+                            android:src="@drawable/profile" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="13dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/avenir_heavy"
+                                    android:text="LeDae Anderson"
+                                    android:textColor="@color/black"
+                                    android:textSize="17sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/avenir_book"
+                                    android:text="2019-06-10"
+                                    android:textColor="#a4a2a2"
+                                    android:textSize="13sp" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="13dp"
+                                android:layout_marginTop="4dp"
+                                android:fontFamily="@font/avenir_book"
+                                android:text="My husband made the lemon chicken\nTuesday night. Delicious!"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="13dp"
+                                android:layout_marginTop="14dp"
+                                android:fontFamily="@font/avenir_book"
+                                android:text="Read more"
+                                android:textColor="#007aff"
+                                android:textSize="13sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="13dp"
+                                android:layout_marginTop="15dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/c1" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="8dp"
+                                    android:src="@drawable/c1" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="8dp"
+                                    android:src="@drawable/c1" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="12dp"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true">
+
+        <EditText
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Add a comment..."
+            android:textSize="13sp"
+            android:inputType="text"
+            android:paddingLeft="18dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/black"
+            android:textColorHint="#a4a2a2"
+            android:fontFamily="@font/avenir_book"
+            android:background="@drawable/rect_gray_radius"/>
+
+        <ImageView
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_plane"
+            android:padding="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/oval_pink"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

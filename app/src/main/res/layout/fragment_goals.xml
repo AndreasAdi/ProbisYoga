@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".fragment.News">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:focusableInTouchMode="true"
+        android:scrollbars="none"
+        android:paddingBottom="70dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#f9f9f9"
+                android:orientation="vertical"
+                android:paddingTop="16dp"
+                android:paddingBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_healthy"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/avenir_heavy"
+                        android:text="Goals"
+                        android:textColor="#e9707d"
+                        android:textSize="27sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_more" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f9f9f9"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="This week"
+                    android:textColor="#303030"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/avenir_heavy"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Show all"
+                    android:textColor="#a4a2a2"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/avenir_book"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="22dp"
+                android:paddingLeft="16dp"
+                android:paddingTop="19dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="22dp"
+                android:background="@drawable/rect_pink">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Calories"
+                        android:textSize="13sp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/avenir_book"/>
+
+                    <TextView
+                        android:paddingTop="6dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="160,5kcal"
+                        android:textSize="20sp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/avenir_heavy"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Time"
+                        android:textSize="13sp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/avenir_book"/>
+
+                    <TextView
+                        android:paddingTop="6dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1:03:30"
+                        android:textSize="20sp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/avenir_heavy"/>
+
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:layout_marginTop="59dp"
+                    android:layout_marginLeft="26dp"
+                    android:paddingBottom="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="52dp"
+                        android:tint="@color/white"
+                        android:background="@drawable/rect_white"/>
+
+                    <TextView
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/avenir_book"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mo"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"/>
+                    
+                    
+                    
+                    
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="29dp"
+                    android:layout_marginLeft="16dp"
+                    android:paddingBottom="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="82dp"
+                        android:tint="@color/white"
+                        android:background="@drawable/rect_white"/>
+
+                    <TextView
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/avenir_book"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tu"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"/>
+
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="59dp"
+                    android:layout_marginLeft="16dp"
+                    android:paddingBottom="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="52dp"
+                        android:tint="@color/white"
+                        android:background="@drawable/rect_white"/>
+
+                    <TextView
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/avenir_book"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="We"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"/>
+
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="29dp"
+                    android:layout_marginLeft="16dp"
+                    android:paddingBottom="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="82dp"
+                        android:tint="@color/white"
+                        android:background="@drawable/rect_white"/>
+
+                    <TextView
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/avenir_book"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Th"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"/>
+
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="59dp"
+                    android:layout_marginLeft="16dp"
+                    android:paddingBottom="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="52dp"
+                        android:tint="@color/white"
+                        android:background="@drawable/rect_white"/>
+
+                    <TextView
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/avenir_book"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fr"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"/>
+
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="29dp"
+                    android:layout_marginLeft="16dp"
+                    android:paddingBottom="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="82dp"
+                        android:tint="@color/white"
+                        android:background="@drawable/rect_white"/>
+
+                    <TextView
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/avenir_book"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sa"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"/>
+
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="29dp"
+                    android:layout_marginLeft="13dp"
+                    android:paddingBottom="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="82dp"
+                        android:tint="@color/white"
+                        android:background="@drawable/rect_white"/>
+
+                    <TextView
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/avenir_book"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Su"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"/>
+
+
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="21dp"
+                android:fontFamily="@font/avenir_heavy"
+                android:text="Trainings"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_schedule"
+                android:paddingTop="35dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

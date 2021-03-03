@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3f3f3"
+    tools:context=".Filter">
+
+    <include android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:paddingBottom="90dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="16dp">
+
+        <TextView
+            android:fontFamily="@font/avenir_heavy"
+            android:layout_marginTop="39dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type "
+            android:textColor="#000000"
+            android:textSize="17sp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_type"
+            android:layout_marginTop="19dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:fontFamily="@font/avenir_heavy"
+            android:layout_marginTop="39dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Level"
+            android:textColor="#000000"
+            android:textSize="17sp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_level"
+            android:layout_marginTop="19dp"
+            android:paddingRight="70dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:fontFamily="@font/avenir_heavy"
+            android:layout_marginTop="39dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Duration"
+            android:textColor="#000000"
+            android:textSize="17sp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_duration"
+            android:layout_marginTop="19dp"
+            android:paddingRight="45dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:fontFamily="@font/avenir_heavy"
+            android:layout_marginTop="39dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Focus"
+            android:textColor="#000000"
+            android:textSize="17sp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_focus"
+            android:layout_marginTop="19dp"
+            android:paddingRight="45dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+             <TextView
+            android:fontFamily="@font/avenir_heavy"
+            android:layout_marginTop="39dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Body Part"
+            android:textColor="#000000"
+            android:textSize="17sp"/>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Skin Rejuvenate"
+                    android:paddingLeft="13.5dp"
+                    android:paddingRight="12.5dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:background="@drawable/rect_pink_radius"/>
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Digestion"
+                    android:paddingLeft="12.5dp"
+                    android:paddingRight="9.5dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="#7e7d7d"
+                    android:textSize="13sp"
+                    android:background="@drawable/rect_white_radius"/>
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Immune System"
+                    android:paddingLeft="13.5dp"
+                    android:paddingRight="12.5dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="#7e7d7d"
+                    android:textSize="13sp"
+                    android:background="@drawable/rect_white_radius"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="45-Emotion Control"
+                    android:paddingLeft="11dp"
+                    android:paddingRight="14dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="#7e7d7d"
+                    android:textSize="13sp"
+                    android:background="@drawable/rect_white_radius"/>
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Skills Enhance"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="12dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:background="@drawable/rect_pink_radius"/>
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pain Relief"
+                    android:paddingLeft="9.5dp"
+                    android:paddingRight="7.5dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:background="@drawable/rect_pink_radius"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Concentration"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:background="@drawable/rect_pink_radius"/>
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Flexibility"
+                    android:paddingLeft="13dp"
+                    android:paddingRight="14dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="#7e7d7d"
+                    android:textSize="13sp"
+                    android:background="@drawable/rect_white_radius"/>
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Strength"
+                    android:paddingLeft="14.5dp"
+                    android:paddingRight="13.5dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="#7e7d7d"
+                    android:textSize="13sp"
+                    android:background="@drawable/rect_white_radius"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Body Alignments"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="21dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="#7e7d7d"
+                    android:textSize="13sp"
+                    android:background="@drawable/rect_white_radius"/>
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sleep Issue"
+                    android:paddingLeft="10.5dp"
+                    android:paddingRight="9.5dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:background="@drawable/rect_pink_radius"/>
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:id="@+id/tv_session"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Body Sculpt"
+                    android:paddingLeft="8.5dp"
+                    android:paddingRight="7.5dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="#7e7d7d"
+                    android:textSize="13sp"
+                    android:background="@drawable/rect_white_radius"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:paddingTop="11dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:paddingBottom="13dp">
+
+        <TextView
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="RESET"
+            android:textColor="#e9707d"
+            android:textSize="15sp"
+            android:paddingTop="13dp"
+            android:paddingBottom="14dp"
+            android:fontFamily="@font/avenir_heavy"
+            android:background="@drawable/rect_pink_border"/>
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:paddingTop="13dp"
+            android:paddingBottom="14dp"
+            android:layout_height="wrap_content"
+            android:text="DONE"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:fontFamily="@font/avenir_heavy"
+            android:background="@drawable/rect_pink_radius"/>
+    </LinearLayout>
+
+</RelativeLayout>

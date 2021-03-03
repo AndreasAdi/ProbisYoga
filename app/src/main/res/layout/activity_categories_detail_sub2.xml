@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3f3f3"
+    tools:context=".CategoriesDetailSub2">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:clipToPadding="false"
+        android:paddingBottom="70dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:fontFamily="@font/avenir_book"
+                android:gravity="center"
+                android:text="Complete beginners should start here! This bundle\nwill teach you basic yoga poses to fill you with energy\nand joy. Hop on your mat and start to build…."
+                android:textColor="#7e7d7d"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginTop="28dp"
+                android:text="Schedule"
+                android:textColor="#e9707d"
+                android:textSize="24sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="#eaeaea" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_schedule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingLeft="13dp"
+                android:paddingRight="13dp"
+                android:paddingTop="35dp" />
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

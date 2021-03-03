@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3f3f3"
+    tools:context=".Faq">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:paddingBottom="50dp"
+        android:clipToPadding="false"
+        android:layout_below="@+id/toolbar">
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:paddingBottom="30dp"
+            android:text="Dear Yoga Creative, our FAQ section can hepl you find the answer you want faster"
+            android:textColor="#66000000"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingTop="22dp">
+
+            <TextView
+                android:fontFamily="@font/avenir_heavy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Most Frequently Asked:"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_faq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="18dp" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:background="#f3f3f3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingTop="22dp">
+
+            <TextView
+                android:fontFamily="@font/avenir_heavy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Most Frequently Asked:"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_faq1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="18dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:paddingBottom="12dp">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="41dp"
+            android:layout_marginRight="41dp"
+            android:background="@drawable/rect_pink_radius"
+            android:gravity="center"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp"
+            android:text="CONTACT US"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

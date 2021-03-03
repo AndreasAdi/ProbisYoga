@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingTop="15dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="14dp"
+        android:layout_gravity="center">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:src="@drawable/profile"
+            app:civ_border_color="#00bfa5"
+            app:civ_border_width="0.2dp" />
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:fontFamily="@font/avenir_heavy"
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LeDae Anderson"
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+
+            <TextView
+                android:fontFamily="@font/avenir_book"
+                android:id="@+id/tv_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Becrlin, Germany"
+                android:textColor="@color/subtxtcolor"
+                android:textSize="13sp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_follow"
+            android:fontFamily="@font/avenir_heavy"
+            android:layout_gravity="center"
+            android:paddingLeft="19dp"
+            android:paddingRight="18dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Follow"
+            android:textColor="#e9707d"
+            android:background="@drawable/rect_pink_border"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

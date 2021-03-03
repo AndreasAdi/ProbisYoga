@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3f3f3"
+    tools:context=".TopicDetail">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="177dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/topic" />
+
+            <TextView
+                android:fontFamily="@font/avenir_heavy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:gravity="center"
+                android:text="5 Easy Weeknight Dinners"
+                android:textColor="#e9707d"
+                android:textSize="24sp" />
+
+            <TextView
+                android:fontFamily="@font/avenir_book"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Healthy and Clean"
+                android:textColor="#000000"
+                android:textSize="17sp" />
+
+            <TextView
+                android:fontFamily="@font/avenir_book"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:text="Make easy and Tasty dinners for busy\nweeknights. Check out the 5 recipes options below"
+                android:textColor="#000000"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="248dp"
+                android:layout_marginTop="9dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/dinner" />
+
+            <TextView
+                android:fontFamily="@font/avenir_book"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginRight="16dp"
+                android:text="Stored in the freezer and you've got a "
+                android:textColor="#000000"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="12dp"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true">
+
+        <EditText
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Add a comment..."
+            android:textSize="13sp"
+            android:inputType="text"
+            android:paddingLeft="18dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/black"
+            android:textColorHint="#a4a2a2"
+            android:fontFamily="@font/avenir_book"
+            android:background="@drawable/rect_gray_radius"/>
+
+        <ImageView
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_plane"
+            android:padding="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/oval_pink"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

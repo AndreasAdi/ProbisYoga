@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="11dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_yoga"
+                android:layout_width="match_parent"
+                android:layout_height="127dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/group1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="11dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:fontFamily="@font/avenir_heavy"
+                    android:id="@+id/tv_week"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rect_white"
+                    android:paddingLeft="7.5dp"
+                    android:paddingTop="2dp"
+                    android:paddingRight="7.5dp"
+                    android:paddingBottom="2dp"
+                    android:text="1 WEEK"
+                    android:textColor="#7e7d7d"
+                    android:textSize="8sp" />
+
+                <TextView
+                    android:fontFamily="@font/avenir_heavy"
+                    android:id="@+id/tv_trial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11.5dp"
+                    android:background="@drawable/rect_green"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="2dp"
+                    android:paddingRight="11dp"
+                    android:paddingBottom="2dp"
+                    android:text="TRIAL"
+                    android:textColor="@color/white"
+                    android:textSize="8sp" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_yoga"
+            android:fontFamily="@font/avenir_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="11dp"
+            android:text="Easy Yoga For Complete Beginners"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tv_level"
+            android:fontFamily="@font/avenir_book"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="2dp"
+            android:text="Level 1"
+            android:textColor="@color/subtxtcolor"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

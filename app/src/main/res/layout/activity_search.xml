@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3f3f3"
+    android:orientation="vertical"
+    tools:context=".Search">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingTop="22dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/rect_gray"
+                        android:drawableLeft="@drawable/ic_search"
+                        android:drawablePadding="10.9dp"
+                        android:hint="Workshop/Program/Session"
+                        android:paddingLeft="12.9dp"
+                        android:paddingTop="12.9dp"
+                        android:paddingBottom="12.9dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="#c5c4c4"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15dp"
+                        android:text="Cancel"
+                        android:textColor="#e9707d"
+                        android:textSize="17sp" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:paddingLeft="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hot Searches"
+                    android:textColor="@color/black"
+                    android:textSize="24sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_searches"
+                    android:paddingLeft="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:paddingLeft="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Popular Courses"
+                    android:textColor="@color/black"
+                    android:textSize="24sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_categorydetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="15dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

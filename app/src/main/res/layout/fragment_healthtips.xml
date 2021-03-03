@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".fragment.News">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:focusableInTouchMode="true"
+        android:scrollbars="none"
+        android:paddingBottom="70dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#f9f9f9"
+                android:orientation="vertical"
+                android:paddingTop="16dp"
+                android:paddingBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_healthy"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/avenir_heavy"
+                        android:text="Healthy Tips "
+                        android:textColor="#e9707d"
+                        android:textSize="27sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_more" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_weightloss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="24dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="21dp"
+                android:layout_marginTop="21dp"
+                android:fontFamily="@font/avenir_heavy"
+                android:text="Hot Topics"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_topics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingLeft="16dp"
+                android:paddingTop="24dp" />
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

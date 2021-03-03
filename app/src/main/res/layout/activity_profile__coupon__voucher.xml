@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".Profile_Coupon_Voucher">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingTop="24dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_arrow_left" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="52.5dp"
+            android:background="@color/white"
+            app:tabGravity="center"
+            app:tabIndicator="@color/black"
+            app:tabIndicatorColor="@color/black"
+            app:tabIndicatorFullWidth="true"
+            app:tabIndicatorHeight="3dp"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/black"
+            app:tabTextColor="#a4a2a2" />
+
+    </LinearLayout>
+
+    <com.example.yogafitnessapp.Temp
+        android:id="@+id/viewpager1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17.7dp" />
+
+
+</LinearLayout>

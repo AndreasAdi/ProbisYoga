@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginBottom="24dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_way"
+        android:padding="7.5dp"
+        android:background="@drawable/oval_pink"/>
+
+    <TextView
+        android:fontFamily="@font/avenir_book"
+        android:id="@+id/tv_question"
+        android:layout_marginLeft="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="What is pro (Sliver and Gold)?"
+        android:textColor="@color/black"
+        android:textSize="15sp"/>
+
+</LinearLayout>
