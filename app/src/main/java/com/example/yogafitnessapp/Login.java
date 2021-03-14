@@ -41,8 +41,8 @@ public class Login extends AppCompatActivity {
 
         if(!email.isEmpty()&&!pass.isEmpty()){
             LoginProcess(email,pass);
-        }else{
-            Toast.makeText(Login.this,"Email And Password Field Is Required!",Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(Login.this, "Email And Password Field Is Required!", Toast.LENGTH_SHORT).show();
         }
     }
     public void LoginProcess(final String email,final String Pass){
