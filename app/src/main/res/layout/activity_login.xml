@@ -1,51 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Txt_Pass"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="24dp"
-    android:paddingRight="24dp"
-    android:background="@color/white"
-    tools:context=".Signup">
+    tools:context=".Login">
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"/>
+        layout="@layout/toolbar" />
 
     <TextView
         android:id="@+id/email"
-        android:fontFamily="@font/avenir_heavy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
         android:layout_marginTop="52dp"
-        android:text="Connect email address"
+        android:fontFamily="@font/avenir_heavy"
+        android:text="Login"
         android:textColor="#e9707d"
         android:textSize="26sp" />
 
     <TextView
-        android:fontFamily="@font/avenir_book"
-        android:layout_below="@+id/email"
         android:id="@+id/recommend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/email"
         android:layout_marginTop="25dp"
-        android:text="It’s recommended to connect your email\naddress for us to bettrt protect your\ninformation."
+        android:fontFamily="@font/avenir_book"
+        android:text="Insert Your Registered Email And Password"
         android:textColor="#333a4d"
         android:textSize="16sp" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_below="@+id/recommend"
         android:id="@+id/et_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/recommend"
         android:layout_marginTop="65dp"
         android:textColorHint="#bec2ce">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/TxtEmail"
+            android:id="@+id/Txt_LogEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/avenir_book"
@@ -57,15 +54,15 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_below="@+id/et_email"
         android:id="@+id/hide_show_android_edittext_password1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/et_email"
         android:layout_marginTop="38dp"
         android:textColorHint="#bec2ce">
 
         <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
-            android:id="@+id/TxtPass"
+            android:id="@+id/Txt_LogPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/et_email"
@@ -94,23 +91,22 @@
         android:background="@drawable/rect_pink_radius"
         android:fontFamily="@font/avenir_heavy"
         android:gravity="center"
-        android:onClick="confirmReg"
+        android:onClick="Login"
         android:paddingTop="13dp"
         android:paddingBottom="13dp"
-        android:text="CONFIRM"
+        android:text="LOGIN"
         android:textColor="@color/white"
         android:textSize="15sp" />
 
     <TextView
-        android:fontFamily="@font/avenir_heavy"
         android:id="@+id/skip"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SKIP"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/avenir_heavy"
         android:paddingBottom="21dp"
+        android:text="SKIP"
         android:textColor="#303030"
         android:textSize="16sp" />
-
 </RelativeLayout>

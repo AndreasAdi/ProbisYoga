@@ -59,9 +59,10 @@
             android:layout_marginRight="41dp"
             android:background="@drawable/rect_pink_radius"
             android:gravity="center"
+            android:onClick="onLoginClick"
             android:paddingTop="13dp"
             android:paddingBottom="13dp"
-            android:text="EMAIL"
+            android:text="LOGIN"
             android:textColor="@color/white"
             android:textSize="15sp" />
 
@@ -75,9 +76,10 @@
             android:layout_marginRight="41dp"
             android:background="@drawable/rect_blue_radius"
             android:gravity="center"
+            android:onClick="onRegisterClick"
             android:paddingTop="13dp"
             android:paddingBottom="13dp"
-            android:text="Facebook"
+            android:text="REGISTER"
             android:textColor="@color/white"
             android:textSize="15sp" />
 

@@ -2,12 +2,10 @@ package com.example.yogafitnessapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,7 +16,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.yogafitnessapp.model.User;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,58 +23,50 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Signup extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
-    ImageView iv_close;
-    TextView tv_friend;
     EditText txt_Email,txt_Pass;
-
+    TextView btn_Login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
-
-        iv_close = findViewById(R.id.iv_close);
-        iv_close.setImageResource(R.drawable.ic_close);
-        txt_Email=findViewById(R.id.TxtEmail);
-        txt_Pass=findViewById(R.id.TxtPass);
-        tv_friend = findViewById(R.id.tv_friend);
-        tv_friend.setVisibility(View.GONE);
-
-        iv_close.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Signup.this, Createacount.class);
-                startActivity(i);
-            }
-        });
+        setContentView(R.layout.activity_login);
+        txt_Email=findViewById(R.id.Txt_LogEmail);
+        txt_Pass=findViewById(R.id.Txt_LogPass);
+        btn_Login=findViewById(R.id.tv_login);
     }
-    public void confirmReg(View v){
-        String email= txt_Email.getText().toString();
+    public void Login(View v){
+        String email=txt_Email.getText().toString();
         String pass=txt_Pass.getText().toString();
-        User u=new User(email,pass);
-        registerUser(u);
 
+        if(!email.isEmpty()&&!pass.isEmpty()){
+            LoginProcess(email,pass);
+        }else{
+            Toast.makeText(Login.this,"Email And Password Field Is Required!",Toast.LENGTH_SHORT).show();
+        }
     }
-    private void registerUser(final User user){
-        StringRequest strReq= new StringRequest(
+    public void LoginProcess(final String email,final String Pass){
+        StringRequest stringRequest=new StringRequest(
                 Request.Method.POST,
-                getResources().getString(R.string.url),//ini masih pakai IP ku
+                getResources().getString(R.string.url),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+                        //System.out.println(response);
                         try {
                             JSONObject jsonObject= new JSONObject(response);
                             int code=jsonObject.getInt("code");
                             String message=jsonObject.getString("message");
                             if(code==1){
-                                Toast.makeText(Signup.this,message,Toast.LENGTH_SHORT).show();
+                                Intent i= new Intent(Login.this,Home.class);
+                                startActivity(i);
+                                finish();
+                            }else{
+                                Toast.makeText(Login.this,message,Toast.LENGTH_SHORT).show();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-
                     }
                 },
                 new Response.ErrorListener() {
@@ -86,18 +75,17 @@ public class Signup extends AppCompatActivity {
 
                     }
                 }
-        ){
+        ) {
             @Override
             protected Map<String,String> getParams() throws AuthFailureError{
-                Map<String,String>params=new HashMap<>();
-                params.put("function","adduser");
-                params.put("email",String.valueOf(user.getUsername()));
-                params.put("password",user.getPassword());
+                Map<String,String> params=new HashMap<>();
+                params.put("function","login");
+                params.put("email",email);
+                params.put("password",Pass);
                 return params;
             }
         };
-        RequestQueue requestQueue= Volley.newRequestQueue(Signup.this);
-        requestQueue.add(strReq);
-
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
     }
 }
