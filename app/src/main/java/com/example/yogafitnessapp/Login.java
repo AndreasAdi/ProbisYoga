@@ -52,7 +52,6 @@ public class Login extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        //System.out.println(response);
                         try {
                             JSONObject jsonObject= new JSONObject(response);
                             int code=jsonObject.getInt("code");
