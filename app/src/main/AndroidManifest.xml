@@ -13,15 +13,15 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".VideoActivity">
+
+        </activity>
+        <activity android:name=".Login" />
+        <activity android:name=".Createacount">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".Login" />
-        <activity android:name=".Createacount">
-
         </activity>
         <activity android:name=".CategorieDetailSub1" />
         <activity android:name=".TopicDetailComment" />
