@@ -10,15 +10,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Login"></activity>
-        <activity android:name=".Createacount">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".VideoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Login" />
+        <activity android:name=".Createacount">
+
         </activity>
         <activity android:name=".CategorieDetailSub1" />
         <activity android:name=".TopicDetailComment" />
@@ -26,8 +29,7 @@
         <activity android:name=".Profile_Coupon_Voucher" />
         <activity android:name=".Filter" />
         <activity android:name=".Faq" />
-        <activity android:name=".List" />
-        <!--<activity android:name=".Createacount" />-->
+        <activity android:name=".List" /> <!-- <activity android:name=".Createacount" /> -->
         <activity android:name=".Signup" />
         <activity android:name=".CategoriesDetailSub2" />
         <activity android:name=".Settings" />

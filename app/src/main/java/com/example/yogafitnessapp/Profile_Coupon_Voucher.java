@@ -7,10 +7,13 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.yogafitnessapp.fragment.Discount;
 import com.example.yogafitnessapp.fragment.Master;
 import com.example.yogafitnessapp.fragment.Training;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -32,6 +35,8 @@ public class Profile_Coupon_Voucher extends AppCompatActivity {
 
         tabLayout1 = findViewById(R.id.tablayout1);
         tabLayout1.setupWithViewPager(viewPager);
+
+
 
     }
 

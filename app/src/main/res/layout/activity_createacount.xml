@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:clipToPadding="false"
-    android:paddingBottom="80dp"
+    android:paddingBottom="40dp"
     tools:context=".Createacount">
 
     <RelativeLayout
@@ -15,7 +15,8 @@
 
         <include
             android:id="@+id/toolbar"
-            layout="@layout/toolbar" />
+            layout="@layout/toolbar"
+            android:visibility="invisible"/>
 
         <ImageView
             android:id="@+id/iv_yoga"
@@ -37,23 +38,13 @@
             android:textColor="#e9707d"
             android:textSize="26sp" />
 
-        <TextView
-            android:id="@+id/tv_save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_start"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="48.7dp"
-            android:gravity="center"
-            android:text="Save your progress to access your personal\ntrainning program!"
-            android:textColor="#a4a2a2"
-            android:textSize="16sp" />
+
 
         <TextView
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_save"
+            android:layout_below="@+id/tv_start"
             android:layout_marginLeft="41dp"
             android:layout_marginTop="45dp"
             android:layout_marginRight="41dp"
@@ -83,22 +74,21 @@
             android:textColor="@color/white"
             android:textSize="15sp" />
 
-        <TextView
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/fb"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="21dp"
             android:layout_marginLeft="41dp"
-            android:layout_marginTop="24dp"
+
+            android:layout_marginTop="37dp"
+            android:layout_marginEnd="14dp"
             android:layout_marginRight="41dp"
             android:layout_marginBottom="5dp"
-            android:background="@drawable/rect_white_radius"
-            android:elevation="3dp"
-            android:gravity="center"
-            android:paddingTop="13dp"
-            android:paddingBottom="13dp"
-            android:text="GOOGLE"
-            android:textColor="#303030"
-            android:textSize="15sp" />
+            android:gravity="center" />
 
     </RelativeLayout>
 

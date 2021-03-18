@@ -23,6 +23,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
     Context context;
     private ArrayList<ProfileModel> profileModelArrayList;
 
+
     public ProfileAdapter(Context context, ArrayList<ProfileModel> profileModelArrayList) {
         this.context = context;
         this.profileModelArrayList = profileModelArrayList;
@@ -39,6 +40,9 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull final ProfileAdapter.ViewHolder holder, final int position) {
+
+
+
         holder.iv_profile.setImageResource(profileModelArrayList.get(position).getIv_profile());
         holder.tv_name.setText(profileModelArrayList.get(position).getTv_name());
         holder.tv_city.setText(profileModelArrayList.get(position).getTv_city());

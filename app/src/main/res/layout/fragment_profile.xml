@@ -46,11 +46,16 @@
                         android:textColor="#303030"
                         android:textSize="27sp" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/tv_logout"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_settings" />
+                        android:layout_weight="1"
+                        android:fontFamily="@font/avenir_heavy"
+                        android:text="Log Out"
+                        android:textAlignment="textEnd"
+                        android:textColor="#303030"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 
@@ -63,9 +68,10 @@
                     android:paddingLeft="17dp">
 
                     <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img_profile"
                         android:layout_width="127dp"
                         android:layout_height="127dp"
-                        android:src="@drawable/profile"/>
+                        android:src="@drawable/profile" />
 
                     <LinearLayout
                         android:layout_marginLeft="16dp"
@@ -74,12 +80,13 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:fontFamily="@font/avenir_heavy"
+                            android:id="@+id/txt_nama"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir_heavy"
                             android:text="Carly Mary"
                             android:textColor="@color/black"
-                            android:textSize="20sp"/>
+                            android:textSize="20sp" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
