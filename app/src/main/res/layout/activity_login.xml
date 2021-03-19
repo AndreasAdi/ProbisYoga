@@ -9,13 +9,15 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
+        layout="@layout/toolbar"
+        tools:visibility="invisible" />
 
     <TextView
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="52dp"
         android:fontFamily="@font/avenir_heavy"
         android:text="Login"
@@ -27,6 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/email"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="25dp"
         android:fontFamily="@font/avenir_book"
         android:text="Insert Your Registered Email And Password"
@@ -45,6 +48,8 @@
             android:id="@+id/Txt_LogEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:fontFamily="@font/avenir_book"
             android:hint="Your Email"
             android:inputType="textEmailAddress"
@@ -66,7 +71,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/et_email"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="31dp"
+            android:layout_marginRight="16dp"
             android:drawableEnd="@drawable/ic_closed_eye"
             android:hint="Password"
             android:maxLength="7"
@@ -108,5 +115,6 @@
         android:paddingBottom="21dp"
         android:text="SKIP"
         android:textColor="#303030"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        tools:visibility="visible" />
 </RelativeLayout>

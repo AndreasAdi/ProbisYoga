@@ -14,14 +14,14 @@
 
     <TextView
         android:id="@+id/tv_friend"
-        android:gravity="center"
-        android:fontFamily="@font/avenir_heavy"
-        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Friend"
+        android:fontFamily="@font/avenir_heavy"
+        android:gravity="center"
+        android:text="Sign Up"
         android:textColor="@color/black"
-        android:textSize="17sp"/>
+        android:textSize="17sp"
+        android:visibility="visible" />
 
 
 
