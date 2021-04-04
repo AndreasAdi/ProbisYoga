@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.yogafitnessapp.Home;
 import com.example.yogafitnessapp.R;
 import com.example.yogafitnessapp.Settings;
 import com.example.yogafitnessapp.adapter.Seetings1Adapter;
@@ -59,9 +60,9 @@ public class Profile extends Fragment {
 
         View view= inflater.inflate(R.layout.fragment_profile, container, false);
 
-        recyclerView = view.findViewById(R.id.rv_settings);
+/*        recyclerView = view.findViewById(R.id.rv_settings);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setLayoutManager(layoutManager);*/
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -82,19 +83,19 @@ public class Profile extends Fragment {
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getActivity());
         if (acct != null) {
             String personName = acct.getDisplayName();
-            String personGivenName = acct.getGivenName();
+/*            String personGivenName = acct.getGivenName();
             String personFamilyName = acct.getFamilyName();
             String personEmail = acct.getEmail();
-            String personId = acct.getId();
+            String personId = acct.getId();*/
             Uri personPhoto = acct.getPhotoUrl();
 
-            tv_nama.setText(personName);
+            /*tv_nama.setText(personName);*/
             Glide.with(this).load(personPhoto).into(img_profile);
 
         }
+        tv_nama.setText(Home.username);
 
-
-        settingsModelArrayList = new ArrayList<>();
+/*        settingsModelArrayList = new ArrayList<>();
 
         for (int i = 0; i < iv_profile.length; i++) {
             SettingsModel view1 = new SettingsModel(iv_profile[i],tv_account[i]);
@@ -115,7 +116,7 @@ public class Profile extends Fragment {
             settingsModelArrayList.add(view1);
         }
         seetings1Adapter = new Seetings1Adapter(getContext(),settingsModelArrayList);
-        recyclerView1.setAdapter(seetings1Adapter);
+        recyclerView1.setAdapter(seetings1Adapter);*/
 
         return view;
     }

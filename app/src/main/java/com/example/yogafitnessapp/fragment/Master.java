@@ -41,7 +41,7 @@ public class Master extends Fragment {
         View view= inflater.inflate(R.layout.fragment_master, container, false);
 
         recyclerView =view.findViewById(R.id.rv_courses);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
@@ -55,7 +55,7 @@ public class Master extends Fragment {
         recyclerView.setAdapter(coursesAdapter);
 
 
-        recyclerView1 =view.findViewById(R.id.rv_program);
+/*        recyclerView1 =view.findViewById(R.id.rv_program);
         RecyclerView.LayoutManager layoutManager1 = new LinearLayoutManager(getActivity());
         recyclerView1.setLayoutManager(layoutManager1);
         recyclerView1.setItemAnimator(new DefaultItemAnimator());
@@ -68,7 +68,7 @@ public class Master extends Fragment {
         }
 
         programAdapter  = new ProgramAdapter(getContext(),weightlossModelArrayList);
-        recyclerView1.setAdapter(programAdapter);
+        recyclerView1.setAdapter(programAdapter);*/
 
         return view;
     }

@@ -10,38 +10,44 @@
     android:background="@color/white"
     tools:context=".Signup">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar"/>
-
     <TextView
         android:id="@+id/email"
-        android:fontFamily="@font/avenir_heavy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"
-        android:layout_marginTop="52dp"
-        android:text="Connect email address"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="93dp"
+        android:fontFamily="@font/avenir_heavy"
+        android:text="Sign Up"
         android:textColor="#e9707d"
         android:textSize="26sp" />
 
-    <TextView
-        android:fontFamily="@font/avenir_book"
-        android:layout_below="@+id/email"
-        android:id="@+id/recommend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="It’s recommended to connect your email\naddress for us to bettrt protect your\ninformation."
-        android:textColor="#333a4d"
-        android:textSize="16sp" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_below="@+id/recommend"
+        android:id="@+id/et_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/email"
+        android:layout_marginTop="124dp"
+        android:textColorHint="#bec2ce">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/TxtUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/avenir_book"
+            android:hint="Username"
+            android:inputType="textEmailAddress"
+            android:textColor="#1e2432"
+            android:textSize="17sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="65dp"
+        android:layout_below="@+id/et_username"
+        android:layout_marginTop="31dp"
         android:textColorHint="#bec2ce">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -56,6 +62,8 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_below="@+id/et_email"
         android:id="@+id/hide_show_android_edittext_password1"
@@ -63,23 +71,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="38dp"
         android:textColorHint="#bec2ce">
-
-        <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
-            android:id="@+id/TxtPass"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/et_email"
-            android:layout_marginTop="31dp"
-            android:drawableEnd="@drawable/ic_closed_eye"
-            android:hint="Password"
-            android:maxLength="7"
-            android:paddingLeft="13dp"
-            android:paddingTop="16dp"
-            android:paddingRight="12dp"
-            android:paddingBottom="16.7dp"
-            android:textSize="14sp"
-            app:drawable_hide="@drawable/ic_visibility"
-            app:drawable_show="@drawable/ic_closed_eye" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -101,16 +92,21 @@
         android:textColor="@color/white"
         android:textSize="15sp" />
 
-    <TextView
-        android:fontFamily="@font/avenir_heavy"
-        android:id="@+id/skip"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_width="wrap_content"
+    <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
+        android:id="@+id/TxtPass"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SKIP"
-        android:paddingBottom="21dp"
-        android:textColor="#303030"
-        android:textSize="16sp" />
+        android:layout_below="@+id/et_email"
+        android:layout_marginTop="31dp"
+        android:drawableEnd="@drawable/ic_closed_eye"
+        android:hint="Password"
+        android:maxLength="7"
+        android:paddingLeft="13dp"
+        android:paddingTop="16dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="16.7dp"
+        android:textSize="14sp"
+        app:drawable_hide="@drawable/ic_visibility"
+        app:drawable_show="@drawable/ic_closed_eye" />
 
 </RelativeLayout>

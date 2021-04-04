@@ -30,7 +30,7 @@ public class Signup extends AppCompatActivity {
 
     ImageView iv_close;
     TextView tv_friend;
-    EditText txt_Email,txt_Pass;
+    EditText txt_Email,txt_Pass,txt_username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,25 +38,28 @@ public class Signup extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
         iv_close = findViewById(R.id.iv_close);
-        iv_close.setImageResource(R.drawable.ic_close);
+       /* iv_close.setImageResource(R.drawable.ic_close);*/
         txt_Email=findViewById(R.id.TxtEmail);
         txt_Pass=findViewById(R.id.TxtPass);
+        txt_username = findViewById(R.id.TxtUsername);
+        /*
         tv_friend = findViewById(R.id.tv_friend);
-        tv_friend.setVisibility(View.GONE);
+        tv_friend.setVisibility(View.GONE);*/
 
-        iv_close.setOnClickListener(new View.OnClickListener() {
+/*        iv_close.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Signup.this, Createacount.class);
                 startActivity(i);
             }
-        });
+        });*/
     }
     public void confirmReg(View v){
         String email= txt_Email.getText().toString();
         String pass=txt_Pass.getText().toString();
-        User u=new User(email,pass);
+        String username=txt_username.getText().toString();
+        User u=new User(username,email,pass);
         registerUser(u);
 
     }
@@ -91,7 +94,8 @@ public class Signup extends AppCompatActivity {
             protected Map<String,String> getParams() throws AuthFailureError{
                 Map<String,String>params=new HashMap<>();
                 params.put("function","adduser");
-                params.put("email",String.valueOf(user.getUsername()));
+                params.put("username",String.valueOf(user.getUsername()));
+                params.put("email",String.valueOf(user.getEmail()));
                 params.put("password",user.getPassword());
                 return params;
             }

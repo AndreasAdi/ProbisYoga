@@ -3,12 +3,23 @@ package com.example.yogafitnessapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
+import com.example.yogafitnessapp.model.User;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -16,6 +27,12 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Createacount extends AppCompatActivity {
 
@@ -73,7 +90,9 @@ public class Createacount extends AppCompatActivity {
 
             // Signed in successfully, show authenticated UI.
             Intent i = new Intent(Createacount.this,Home.class);
-           startActivity(i);
+
+            i.putExtra("username",account.getDisplayName());
+            startActivity(i);
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
@@ -95,7 +114,10 @@ public class Createacount extends AppCompatActivity {
         i = new Intent(this,Home.class);
         startActivity(i);*/
 
-        signIn();
+        if (account!=null){
+            signIn();
+        }
+
     }
 
     public void onRegisterClick(View v){
@@ -103,4 +125,7 @@ public class Createacount extends AppCompatActivity {
         i= new Intent(this,Signup.class);
         startActivity(i);
     }
+
+
+
 }

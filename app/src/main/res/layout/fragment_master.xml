@@ -30,13 +30,12 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_courses"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clipToPadding="false"
-                android:paddingLeft="16dp"
                 android:paddingTop="15dp" />
 
-            <TextView
+  <!--          <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/avenir_heavy"
@@ -52,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:clipToPadding="false"
                 android:paddingLeft="16dp"
-                android:paddingTop="15dp" />
+                android:paddingTop="15dp" />-->
 
         </LinearLayout>
 

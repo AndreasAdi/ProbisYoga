@@ -42,9 +42,9 @@ public class Training extends Fragment {
     private void setupViewPager(ViewPager viewPager) {
 
         ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
+        adapter.addFragment(new Master(), "Beginner");
         adapter.addFragment(new Master(), "Master");
         adapter.addFragment(new Master(), "Skilled");
-        adapter.addFragment(new Master(), "Beginner");
         viewPager.setAdapter(adapter);
 
     }

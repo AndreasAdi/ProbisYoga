@@ -3,6 +3,16 @@ package com.example.yogafitnessapp.model;
 public class User {
     String username;
     String password;
+    String email;
+
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getUsername() {
         return username;
@@ -20,8 +30,9 @@ public class User {
         this.password = password;
     }
 
-    public User(String username, String password) {
+    public User(String username,String email, String password) {
         this.username = username;
+        this.email = email;
         this.password = password;
     }
 }

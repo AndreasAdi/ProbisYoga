@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -132,7 +133,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/avenir_heavy"
-                        android:text="@string/yoga_basics_for_beginners"
+                        android:text="7 Days Core Strength Building"
                         android:textColor="#303030"
                         android:textSize="25sp" />
 
@@ -150,28 +151,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="13dp"
-                        android:orientation="horizontal">
-
-                        <RatingBar
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:progressTint="#f7b500"
-                            android:progress="4"
-                            style="@style/Widget.AppCompat.RatingBar.Small"
-                            android:layout_marginLeft="5dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="5.3dp"
-                            android:fontFamily="@font/avenir_book"
-                            android:text="(286 Reviews)"
-                            android:textColor="#a4a2a2"
-                            android:textSize="15sp" />
-
-                    </LinearLayout>
+                        android:orientation="horizontal"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -184,79 +164,43 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="4dp"
-                                android:src="@drawable/ic_group_16"/>
-
                             <LinearLayout
                                 android:layout_marginLeft="8dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Level"
-                                    android:textColor="#a4a2a2"
-                                    android:textSize="13sp"
-                                    android:fontFamily="@font/avenir_book"/>
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="1"
-                                    android:textColor="#3c3c3c"
-                                    android:textSize="17sp"
-                                    android:fontFamily="@font/avenir_heavy"/>
-
-
-
-                            </LinearLayout>
+                                android:orientation="vertical"/>
 
                         </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="4dp"
+                            android:src="@drawable/ic_group_18" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:fontFamily="@font/avenir_heavy"
+                            android:text="20"
+                            android:textColor="#3c3c3c"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:fontFamily="@font/avenir_book"
+                            android:text="Mins"
+                            android:textColor="#a4a2a2"
+                            android:textSize="13sp" />
 
                         <LinearLayout
                             android:layout_marginLeft="37dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="4dp"
-                                android:src="@drawable/ic_g17"/>
-
-                            <LinearLayout
-                                android:layout_marginLeft="8dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Week"
-                                    android:textColor="#a4a2a2"
-                                    android:textSize="13sp"
-                                    android:fontFamily="@font/avenir_book"/>
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="1"
-                                    android:textColor="#3c3c3c"
-                                    android:textSize="17sp"
-                                    android:fontFamily="@font/avenir_heavy"/>
-
-
-
-                            </LinearLayout>
-
-                        </LinearLayout>
+                            android:orientation="horizontal"/>
 
 
                         <LinearLayout
@@ -265,34 +209,11 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingTop="4dp"
-                                android:src="@drawable/ic_group_18"/>
-
                             <LinearLayout
                                 android:layout_marginLeft="8dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Mins"
-                                    android:textColor="#a4a2a2"
-                                    android:textSize="13sp"
-                                    android:fontFamily="@font/avenir_book"/>
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="20"
-                                    android:textColor="#3c3c3c"
-                                    android:textSize="17sp"
-                                    android:fontFamily="@font/avenir_heavy"/>
-
 
 
                             </LinearLayout>
@@ -325,27 +246,31 @@
                     android:textSize="14sp"/>
 
                 <TextView
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="28dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="28dp"
                     android:text="Schedule"
+                    android:textColor="#e9707d"
                     android:textSize="24sp"
-                    android:textColor="#e9707d"/>
+                    tools:visibility="invisible" />
+
                 <View
-                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#f3f3f3"/>
+                    android:layout_marginTop="10dp"
+                    android:background="#f3f3f3"
+                    tools:visibility="invisible" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_schedule"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="16dp"
                     android:clipToPadding="false"
+                    android:paddingLeft="16dp"
                     android:paddingTop="35dp"
-                    android:paddingBottom="96dp" />
+                    android:paddingBottom="96dp"
+                    tools:visibility="invisible" />
 
             </LinearLayout>
 
@@ -369,19 +294,19 @@
             android:paddingBottom="11.7dp">
 
             <TextView
-                android:fontFamily="@font/avenir_heavy"
-                android:layout_marginTop="33dp"
-                android:layout_marginLeft="41dp"
-                android:layout_marginRight="41dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ADD TO PRACTIVE"
+                android:layout_marginLeft="41dp"
+                android:layout_marginTop="33dp"
+                android:layout_marginRight="41dp"
+                android:background="@drawable/rect_pink_radius"
+                android:fontFamily="@font/avenir_heavy"
                 android:gravity="center"
                 android:paddingTop="13dp"
                 android:paddingBottom="13dp"
-                android:textSize="15sp"
-                android:background="@drawable/rect_pink_radius"
-                android:textColor="@color/white"/>
+                android:text="ADD TO TRAINING"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
         </LinearLayout>
 
