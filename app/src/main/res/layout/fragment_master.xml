@@ -7,35 +7,31 @@
     android:orientation="vertical"
     tools:context=".fragment.News">
 
-    <androidx.core.widget.NestedScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="none">
+        android:orientation="vertical"
+        android:paddingTop="22dp">
 
-        <LinearLayout
-            android:paddingTop="22dp"
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:fontFamily="@font/avenir_heavy"
+            android:paddingLeft="16dp"
+            android:text="Home"
+            android:textColor="#e9707d"
+            android:textSize="27sp" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_courses"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="80dp"
+            android:clipToPadding="false"
+            android:paddingTop="15dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/avenir_heavy"
-                android:paddingLeft="16dp"
-                android:text="Most Popular Courses"
-                android:textColor="@color/black"
-                android:textSize="24sp" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_courses"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clipToPadding="false"
-                android:paddingTop="15dp" />
-
-  <!--          <TextView
+        <!--          <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/avenir_heavy"
@@ -53,9 +49,7 @@
                 android:paddingLeft="16dp"
                 android:paddingTop="15dp" />-->
 
-        </LinearLayout>
-
-    </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
 
 
 </LinearLayout>

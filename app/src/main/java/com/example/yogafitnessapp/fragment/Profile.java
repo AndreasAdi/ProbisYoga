@@ -83,13 +83,7 @@ public class Profile extends Fragment {
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getActivity());
         if (acct != null) {
             String personName = acct.getDisplayName();
-/*            String personGivenName = acct.getGivenName();
-            String personFamilyName = acct.getFamilyName();
-            String personEmail = acct.getEmail();
-            String personId = acct.getId();*/
             Uri personPhoto = acct.getPhotoUrl();
-
-            /*tv_nama.setText(personName);*/
             Glide.with(this).load(personPhoto).into(img_profile);
 
         }

@@ -37,12 +37,6 @@
                     android:textColor="#e9707d"
                     android:textSize="27sp" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_more" />
-
             </LinearLayout>
 
 
