@@ -1,5 +1,6 @@
 package com.example.yogafitnessapp.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.yogafitnessapp.CategorieDetailSub1;
 import com.example.yogafitnessapp.R;
 import com.example.yogafitnessapp.adapter.CoursesAdapter;
 import com.example.yogafitnessapp.adapter.ProgramAdapter;
@@ -24,6 +26,7 @@ public class Master extends Fragment {
     private CoursesAdapter coursesAdapter;
     private ArrayList<WeightlossModel> weightlossModelArrayList;
     private RecyclerView recyclerView;
+    private CoursesAdapter.RecyclerViewClickListener listener;
 
     Integer[] iv_weightloss={R.drawable.yoga_poses,R.drawable.yoga_poses
             ,R.drawable.yoga_poses};
@@ -51,7 +54,8 @@ public class Master extends Fragment {
             WeightlossModel view1 = new WeightlossModel(iv_weightloss[i]);
             weightlossModelArrayList.add(view1);
         }
-        coursesAdapter = new CoursesAdapter(getContext(),weightlossModelArrayList);
+        setOnclickListener();
+        coursesAdapter = new CoursesAdapter(getContext(),weightlossModelArrayList,listener);
         recyclerView.setAdapter(coursesAdapter);
 
 
@@ -71,5 +75,16 @@ public class Master extends Fragment {
         recyclerView1.setAdapter(programAdapter);*/
 
         return view;
+    }
+
+    private void setOnclickListener() {
+        listener = new CoursesAdapter.RecyclerViewClickListener() {
+            @Override
+            public void onClick(View v, int position) {
+                Intent i = new Intent(new Intent(getContext(), CategorieDetailSub1.class));
+                i.putExtra("id",position);
+                startActivity(i);
+            }
+        };
     }
 }

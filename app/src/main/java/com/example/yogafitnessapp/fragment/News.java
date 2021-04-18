@@ -34,7 +34,7 @@ public class News extends Fragment {
     private CoursesAdapter coursesAdapter;
     private ArrayList<WeightlossModel> weightlossModelArrayList;
     private RecyclerView recyclerView;
-
+    private CoursesAdapter.RecyclerViewClickListener listener;
     Integer[] iv_weightloss={R.drawable.yoga_poses,R.drawable.yoga_poses
             ,R.drawable.yoga_poses};
 
@@ -72,7 +72,7 @@ public class News extends Fragment {
             WeightlossModel view1 = new WeightlossModel(iv_weightloss[i]);
             weightlossModelArrayList.add(view1);
         }
-        coursesAdapter = new CoursesAdapter(getContext(),weightlossModelArrayList);
+        coursesAdapter = new CoursesAdapter(getContext(),weightlossModelArrayList,listener);
         recyclerView.setAdapter(coursesAdapter);
 
 

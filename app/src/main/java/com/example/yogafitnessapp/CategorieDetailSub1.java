@@ -6,13 +6,22 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.yogafitnessapp.adapter.CategorydetailAdapter;
 import com.example.yogafitnessapp.adapter.ProfileAdapter;
 import com.example.yogafitnessapp.adapter.SubCategoryAdapter;
@@ -20,7 +29,12 @@ import com.example.yogafitnessapp.model.CategoryModel;
 import com.example.yogafitnessapp.model.ProfileModel;
 import com.google.android.material.appbar.AppBarLayout;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CategorieDetailSub1 extends AppCompatActivity {
 
@@ -28,18 +42,7 @@ public class CategorieDetailSub1 extends AppCompatActivity {
     private ArrayList<ProfileModel> profileModelArrayList;
     private RecyclerView recyclerView;
 
-    Integer[] iv_profile={R.drawable.yoga1,R.drawable.yoga1
-            ,R.drawable.yoga1,R.drawable.yoga1
-            ,R.drawable.yoga1,R.drawable.yoga1};
-
-    String[] tv_name={"DAY 01","DAY 02","DAY 03"
-            ,"DAY 04","DAY 05","DAY 06"};
-
-    String[] tv_city={"11 mins","10 mins","15 mins"
-            ,"15 mins","18 mins","15 mins"};
-
-    ImageView back, back1, share, share1, like;
-    TextView tv_puma, txtheading;
+    TextView tv_nama,tv_waktu,tv_desc;
     Toolbar toolbar;
     LinearLayout linear2;
 
@@ -49,68 +52,57 @@ public class CategorieDetailSub1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categorie_detail_sub1);
 
-        back = (ImageView) findViewById(R.id.back);
-        back1 = (ImageView) findViewById(R.id.back1);
-        tv_puma = (TextView) findViewById(R.id.title);
-        txtheading = (TextView) findViewById(R.id.txtheading);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        tv_waktu = findViewById(R.id.tv_waktu);
+        tv_desc = findViewById(R.id.tv_desc);
+        tv_nama = findViewById(R.id.tv_nama);
 
-        back = (ImageView) findViewById(R.id.back);
-        back1 = (ImageView) findViewById(R.id.back1);
-        like = (ImageView) findViewById(R.id.like);
-        tv_puma = (TextView) findViewById(R.id.title);
-        txtheading = (TextView) findViewById(R.id.txtheading);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
 
-        //collapsing toolbar:
-        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.mainappbar);
-        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
-            boolean isShow = false;
-            int scrollRange = -1;
+        load_detail("1");
 
+    }
+
+    public void load_detail(final String id){
+        StringRequest stringRequest=new StringRequest(
+                Request.Method.POST,
+                getResources().getString(R.string.url),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject= new JSONObject(response);
+                            int code=jsonObject.getInt("code");
+                            String message=jsonObject.getString("message");
+                            String nama = jsonObject.getString("nama");
+                            String waktu = jsonObject.getString("waktu");
+                            String desc = jsonObject.getString("desc");
+                            if(code==1){
+                                tv_nama.setText(nama);
+                                tv_waktu.setText(waktu);
+                                tv_desc.setText(desc);
+                            }else{
+
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                    }
+                }
+        ) {
             @Override
-            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-                if (scrollRange == -1) {
-                    scrollRange = appBarLayout.getTotalScrollRange();
-                }
-                if (scrollRange + verticalOffset == 0) {
-
-                    //is collapsed
-                    //   logo.setVisibility(View.GONE);
-                    txtheading.setVisibility(View.VISIBLE);
-                    txtheading.setTextColor(Color.parseColor("#000000"));
-                    toolbar.setBackgroundColor(getResources().getColor(R.color.white));
-                    back1.setVisibility(View.VISIBLE);
-                    back.setVisibility(View.GONE);
-                    tv_puma.setVisibility(View.GONE);
-                    isShow = true;
-
-                } else if (isShow) {
-                    isShow = false;
-
-                    //is not collapsed
-                    //  logo.setVisibility(View.VISIBLE);
-                    txtheading.setVisibility(View.GONE);
-                    tv_puma.setVisibility(View.VISIBLE);
-                    toolbar.setBackgroundColor(getResources().getColor(R.color.transperent));
-                }
+            protected Map<String,String> getParams() throws AuthFailureError {
+                Map<String,String> params=new HashMap<>();
+                params.put("function","LoadDetail");
+                params.put("id_workout",id);
+                return params;
             }
-        });
-
-        recyclerView = findViewById(R.id.rv_schedule);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(CategorieDetailSub1.this);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-
-        profileModelArrayList = new ArrayList<>();
-
-        for (int i = 0; i < iv_profile.length; i++) {
-            ProfileModel view1 = new ProfileModel(iv_profile[i],tv_name[i],tv_city[i]);
-            profileModelArrayList.add(view1);
-        }
-        profileAdapter = new SubCategoryAdapter(CategorieDetailSub1.this,profileModelArrayList);
-        recyclerView.setAdapter(profileAdapter);
-
+        };
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
     }
 }
 

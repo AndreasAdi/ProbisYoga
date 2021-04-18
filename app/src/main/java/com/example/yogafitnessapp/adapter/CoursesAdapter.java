@@ -14,18 +14,18 @@ import com.example.yogafitnessapp.model.WeightlossModel;
 
 import java.util.ArrayList;
 
-/**
- * Created by wolfsoft4 on 28/12/18.
- */
+
 
 public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHolder>{
 
     Context context;
     private ArrayList<WeightlossModel> weightlossModelArrayList;
+    private RecyclerViewClickListener listener;
 
-    public CoursesAdapter(Context context, ArrayList<WeightlossModel> weightlossModelArrayList) {
+    public CoursesAdapter(Context context, ArrayList<WeightlossModel> weightlossModelArrayList, RecyclerViewClickListener listener) {
         this.context = context;
         this.weightlossModelArrayList = weightlossModelArrayList;
+        this.listener = listener;
     }
 
     @NonNull
@@ -48,7 +48,7 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHold
         return weightlossModelArrayList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements  View.OnClickListener {
 
         ImageView iv_weightloss;
 
@@ -57,6 +57,16 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHold
             super(itemView);
 
             iv_weightloss=itemView.findViewById(R.id.iv_yoga);
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View view) {
+            listener.onClick(itemView, getAdapterPosition());
+        }
+    }
+
+    public interface RecyclerViewClickListener{
+        void onClick(View v,int position);
     }
 }
