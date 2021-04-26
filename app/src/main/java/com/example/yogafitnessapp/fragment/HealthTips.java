@@ -53,7 +53,7 @@ public class HealthTips extends Fragment {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         weightlossModelArrayList = new ArrayList<>();
-
+/*
         for (int i = 0; i < iv_weightloss.length; i++) {
             WeightlossModel view1 = new WeightlossModel(iv_weightloss[i]);
             weightlossModelArrayList.add(view1);
@@ -75,7 +75,7 @@ public class HealthTips extends Fragment {
             settingsModelArrayList.add(view1);
         }
         topicAdapter = new TopicAdapter(getContext(),settingsModelArrayList);
-        recyclerView1.setAdapter(topicAdapter);
+        recyclerView1.setAdapter(topicAdapter);*/
 
         return view;
     }

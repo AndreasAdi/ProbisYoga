@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -40,6 +41,7 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull final CoursesAdapter.ViewHolder holder, final int position) {
         holder.iv_weightloss.setImageResource(weightlossModelArrayList.get(position).getIv_weightloss());
+        holder.tv_nama.setText(weightlossModelArrayList.get(position).getNama());
     }
 
     @Override
@@ -51,12 +53,13 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder implements  View.OnClickListener {
 
         ImageView iv_weightloss;
-
+        TextView tv_nama;
         public ViewHolder(View itemView) {
 
             super(itemView);
 
             iv_weightloss=itemView.findViewById(R.id.iv_yoga);
+            tv_nama = itemView.findViewById(R.id.tv_nama);
             itemView.setOnClickListener(this);
         }
 

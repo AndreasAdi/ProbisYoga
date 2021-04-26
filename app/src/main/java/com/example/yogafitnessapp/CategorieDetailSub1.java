@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -42,9 +43,12 @@ public class CategorieDetailSub1 extends AppCompatActivity {
     private ArrayList<ProfileModel> profileModelArrayList;
     private RecyclerView recyclerView;
 
-    TextView tv_nama,tv_waktu,tv_desc;
+    TextView tv_nama,tv_waktu,tv_desc,btn_add;
+    ImageView iv_gambar;
     Toolbar toolbar;
     LinearLayout linear2;
+    String id;
+    int gambar;
 
 
     @Override
@@ -55,9 +59,27 @@ public class CategorieDetailSub1 extends AppCompatActivity {
         tv_waktu = findViewById(R.id.tv_waktu);
         tv_desc = findViewById(R.id.tv_desc);
         tv_nama = findViewById(R.id.tv_nama);
+        iv_gambar = findViewById(R.id.iv_shop);
+        btn_add = findViewById(R.id.btn_add);
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            id = bundle.getString("id");
+            gambar = bundle.getInt("gambar");
+            load_detail(id);
+        }
 
 
-        load_detail("1");
+        btn_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                add_to_traning();
+            }
+        });
+
+    }
+
+    public void add_to_traning(){
 
     }
 
@@ -79,6 +101,7 @@ public class CategorieDetailSub1 extends AppCompatActivity {
                                 tv_nama.setText(nama);
                                 tv_waktu.setText(waktu);
                                 tv_desc.setText(desc);
+                                iv_gambar.setImageResource(gambar);
                             }else{
 
                             }

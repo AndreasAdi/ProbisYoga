@@ -67,6 +67,7 @@ public class News extends Fragment {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         weightlossModelArrayList = new ArrayList<>();
+/*
 
         for (int i = 0; i < iv_weightloss.length; i++) {
             WeightlossModel view1 = new WeightlossModel(iv_weightloss[i]);
@@ -92,6 +93,7 @@ public class News extends Fragment {
         recyclerView1.setAdapter(programAdapter);
 
 
+*/
 
         return view;
     }
