@@ -29,6 +29,7 @@ import com.example.yogafitnessapp.adapter.ProgramAdapter;
 import com.example.yogafitnessapp.adapter.WeightlossAdapter;
 import com.example.yogafitnessapp.model.User;
 import com.example.yogafitnessapp.model.WeightlossModel;
+import com.example.yogafitnessapp.workout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,14 +45,10 @@ public class Master extends Fragment {
 
     private CoursesAdapter coursesAdapter;
     private ArrayList<WeightlossModel> weightlossModelArrayList;
+    private ArrayList<workout> list_workout;
+
     private RecyclerView recyclerView;
-    private CoursesAdapter.RecyclerViewClickListener listener;
 
-
-     TypedArray dataPhoto;
-
-     ArrayList<String> list_nama = new ArrayList<>();
-     ArrayList<String> list_id = new ArrayList<>();
 
 
 
@@ -66,42 +63,26 @@ public class Master extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         weightlossModelArrayList = new ArrayList<>();
+        list_workout = new ArrayList<>();
 
+        coursesAdapter = new CoursesAdapter(getActivity(),weightlossModelArrayList);
+        recyclerView.setAdapter(coursesAdapter);
         load_header();
-
-        dataPhoto =getResources().obtainTypedArray(R.array.data_photo);
-
-        setOnclickListener();
 
         return view;
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
 
-    }
-
-    private void setOnclickListener() {
-        listener = new CoursesAdapter.RecyclerViewClickListener() {
-            @Override
-            public void onClick(View v, int position) {
-                Intent i = new Intent(new Intent(getContext(), CategorieDetailSub1.class));
-                i.putExtra("id",list_id.get(position));
-                i.putExtra("gambar",dataPhoto.getResourceId(position,-1));
-                startActivity(i);
-            }
-        };
-    }
 
 
     private void load_view(){
-        for (int i = 0; i < list_nama.size(); i++) {
-            WeightlossModel view1 = new WeightlossModel(dataPhoto.getResourceId(i,-1),list_nama.get(i));
+        for (int i = 0; i < list_workout.size(); i++) {
+            String gambar = getResources().getString(R.string.folder_gambar)+"/"+list_workout.get(i).getGambar();
+            WeightlossModel view1 = new WeightlossModel(list_workout.get(i).getNama(),gambar,list_workout.get(i).getId());
             weightlossModelArrayList.add(view1);
         }
-        coursesAdapter = new CoursesAdapter(getContext(),weightlossModelArrayList,listener);
-        recyclerView.setAdapter(coursesAdapter);
+        coursesAdapter.notifyDataSetChanged();
+
 
     }
     private void load_header(){
@@ -116,18 +97,23 @@ public class Master extends Fragment {
                             int code=jsonObject.getInt("code");
                             JSONArray nama = jsonObject.getJSONArray("nama");
                             JSONArray id = jsonObject.getJSONArray("id");
+                            JSONArray time = jsonObject.getJSONArray("time");
+                            JSONArray desc = jsonObject.getJSONArray("desc");
+                            JSONArray gambar = jsonObject.getJSONArray("gambar");
+                            JSONArray video = jsonObject.getJSONArray("video");
                             String message=jsonObject.getString("message");
+
                             if(code==1){
                                 for (int i = 0; i <nama.length(); i++) {
-                                    list_nama.add(nama.getString(i));
-                                    list_id.add(id.getString(i));
-                                    System.out.println(nama.getString(i));
+                                        list_workout.add(new workout(id.getString(i),nama.getString(i),
+                                                desc.getString(i),time.getString(i),video.getString(i),
+                                                gambar.getString(i)));
                                 }
-
+                                System.out.println("tidak ada error");
                                 load_view();
                             }
                             else{
-
+                                System.out.println("Ada error");
                             }
 
                         } catch (JSONException e) {

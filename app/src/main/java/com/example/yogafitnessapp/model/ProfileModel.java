@@ -2,36 +2,37 @@ package com.example.yogafitnessapp.model;
 
 public class ProfileModel {
 
-    Integer iv_profile;
-    String tv_name,tv_city;
+    String gambar;
+    String waktu;
+    String nama;
 
-    public ProfileModel(Integer iv_profile, String tv_name, String tv_city) {
-        this.iv_profile = iv_profile;
-        this.tv_name = tv_name;
-        this.tv_city = tv_city;
+    public ProfileModel(String gambar, String waktu, String nama) {
+        this.gambar = gambar;
+        this.waktu = waktu;
+        this.nama = nama;
     }
 
-    public Integer getIv_profile() {
-        return iv_profile;
+    public String getGambar() {
+        return gambar;
     }
 
-    public void setIv_profile(Integer iv_profile) {
-        this.iv_profile = iv_profile;
+    public void setGambar(String gambar) {
+        this.gambar = gambar;
     }
 
-    public String getTv_name() {
-        return tv_name;
+    public String getWaktu() {
+        return waktu;
     }
 
-    public void setTv_name(String tv_name) {
-        this.tv_name = tv_name;
+    public void setWaktu(String waktu) {
+        this.waktu = waktu;
     }
 
-    public String getTv_city() {
-        return tv_city;
+    public String getNama() {
+        return nama;
     }
 
-    public void setTv_city(String tv_city) {
-        this.tv_city = tv_city;
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 }

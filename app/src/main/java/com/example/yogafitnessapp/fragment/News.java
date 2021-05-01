@@ -34,7 +34,7 @@ public class News extends Fragment {
     private CoursesAdapter coursesAdapter;
     private ArrayList<WeightlossModel> weightlossModelArrayList;
     private RecyclerView recyclerView;
-    private CoursesAdapter.RecyclerViewClickListener listener;
+
     Integer[] iv_weightloss={R.drawable.yoga_poses,R.drawable.yoga_poses
             ,R.drawable.yoga_poses};
 

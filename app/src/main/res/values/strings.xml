@@ -9,8 +9,8 @@
     <string name="goals">Training</string>
     <string name="profile">Profile </string>
     <string name="yoga_basics_for_beginners">Yoga Basics for Beginners</string>
-    <string name="url">http://192.168.0.106/ProbisYogaQuery/Function.php</string>
-    <string name="folder_gambar">http://192.168.0.106/ProbisYogaQuery/Gambar</string>
+    <string name="url">http://192.168.0.101/ProbisYogaQuery/Function.php</string>
+    <string name="folder_gambar">http://192.168.0.101/ProbisYogaQuery/Gambar</string>
 
 
 

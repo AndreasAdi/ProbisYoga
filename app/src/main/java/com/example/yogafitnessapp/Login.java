@@ -57,9 +57,12 @@ public class Login extends AppCompatActivity {
                             int code=jsonObject.getInt("code");
                             String message=jsonObject.getString("message");
                             String username = jsonObject.getString("username");
+                            String id_user = jsonObject.getString("id_user");
                             if(code==1){
                                 Intent i= new Intent(Login.this,Home.class);
                                 i.putExtra("username",username);
+                                i.putExtra("id_user",id_user);
+                                i.putExtra("email",email);
                                 startActivity(i);
                                 finish();
                             }else{

@@ -43,6 +43,8 @@ public class Home extends AppCompatActivity
     GoogleSignInClient mGoogleSignInClient;
     int RC_SIGN_IN =0;
     public static String username;
+    public  static  String id_user;
+    public static String email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +68,8 @@ public class Home extends AppCompatActivity
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             username = bundle.getString("username");
+            id_user = bundle.getString("id_user");
+            email = bundle.getString("email");
         }
     }
 
@@ -114,63 +118,13 @@ public class Home extends AppCompatActivity
         return false;
     }
 
-    /*public void daftar_google(final String email,final String photo){
-        StringRequest strReq= new StringRequest(
-                Request.Method.POST,
-                getResources().getString(R.string.url),//ini masih pakai IP ku
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject jsonObject= new JSONObject(response);
-                            int code=jsonObject.getInt("code");
-                            String message=jsonObject.getString("message");
-                            Toast.makeText(Home.this, "Code : " +code, Toast.LENGTH_SHORT).show();
-                            if(code==1){
-                                Toast.makeText(Home.this,message,Toast.LENGTH_SHORT).show();
-                            }
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-
-                    }
-                }
-        ){
-            @Override
-            protected Map<String,String> getParams() throws AuthFailureError {
-                Map<String,String>params=new HashMap<>();
-                params.put("function","addUserGoogle");
-                params.put("email",email);
-                params.put("photo",photo);
-                return params;
-            }
-        };
-        RequestQueue requestQueue= Volley.newRequestQueue(Home.this);
-        requestQueue.add(strReq);
-
-    }*/
-
-
 
     public void confirmReg(){
 
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(Home.this);
         if (acct != null) {
             String personName = acct.getDisplayName();
-            String personGivenName = acct.getGivenName();
-            String personFamilyName = acct.getFamilyName();
             String personEmail = acct.getEmail();
-            String personId = acct.getId();
-            Uri personPhoto = acct.getPhotoUrl();
-
-
             User u=new User(personName,personEmail,"");
             registerUser(u);
         }
@@ -191,13 +145,8 @@ public class Home extends AppCompatActivity
                             JSONObject jsonObject= new JSONObject(response);
                             int code=jsonObject.getInt("code");
                             String message=jsonObject.getString("message");
-                            if(code==1){
-                                Toast.makeText(Home.this,message,Toast.LENGTH_SHORT).show();
+                            id_user = jsonObject.getString("id_user");
 
-                            }
-                            else{
-                                Toast.makeText(Home.this, "Code :"+code,Toast.LENGTH_SHORT).show();
-                            }
 
                         } catch (JSONException e) {
                             e.printStackTrace();

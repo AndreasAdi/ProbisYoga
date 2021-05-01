@@ -2,7 +2,16 @@ package com.example.yogafitnessapp.model;
 
 public class WeightlossModel {
 
-    Integer iv_weightloss;
+
+    String nama;
+    String gambar;
+    String id;
+
+    public WeightlossModel(String nama, String gambar, String id) {
+        this.nama = nama;
+        this.gambar = gambar;
+        this.id = id;
+    }
 
     public String getNama() {
         return nama;
@@ -12,18 +21,19 @@ public class WeightlossModel {
         this.nama = nama;
     }
 
-    String nama;
-
-    public WeightlossModel(Integer iv_weightloss, String nama) {
-        this.iv_weightloss = iv_weightloss;
-        this.nama = nama;
+    public String getGambar() {
+        return gambar;
     }
 
-    public Integer getIv_weightloss() {
-        return iv_weightloss;
+    public void setGambar(String gambar) {
+        this.gambar = gambar;
     }
 
-    public void setIv_weightloss(Integer iv_weightloss) {
-        this.iv_weightloss = iv_weightloss;
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

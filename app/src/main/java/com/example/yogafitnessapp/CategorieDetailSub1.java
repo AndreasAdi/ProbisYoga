@@ -23,6 +23,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.example.yogafitnessapp.adapter.CategorydetailAdapter;
 import com.example.yogafitnessapp.adapter.ProfileAdapter;
 import com.example.yogafitnessapp.adapter.SubCategoryAdapter;
@@ -48,7 +49,7 @@ public class CategorieDetailSub1 extends AppCompatActivity {
     Toolbar toolbar;
     LinearLayout linear2;
     String id;
-    int gambar;
+    String gambar;
 
 
     @Override
@@ -65,7 +66,7 @@ public class CategorieDetailSub1 extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             id = bundle.getString("id");
-            gambar = bundle.getInt("gambar");
+            gambar = bundle.getString("gambar");
             load_detail(id);
         }
 
@@ -80,7 +81,46 @@ public class CategorieDetailSub1 extends AppCompatActivity {
     }
 
     public void add_to_traning(){
-
+        StringRequest stringRequest=new StringRequest(
+                Request.Method.POST,
+                getResources().getString(R.string.url),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject= new JSONObject(response);
+                            int code=jsonObject.getInt("code");
+                 /*           String message=jsonObject.getString("message");
+                            String nama = jsonObject.getString("nama");
+                            String waktu = jsonObject.getString("waktu");
+                            String desc = jsonObject.getString("desc");*/
+                            if(code==1){
+                                Toast.makeText(CategorieDetailSub1.this, "Berhasil menambahkan", Toast.LENGTH_SHORT).show();
+                            }else{
+                                Toast.makeText(CategorieDetailSub1.this, "Gagal menambahkan", Toast.LENGTH_SHORT).show();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                    }
+                }
+        ) {
+            @Override
+            protected Map<String,String> getParams() throws AuthFailureError {
+                Map<String,String> params=new HashMap<>();
+                params.put("function","add_training");
+                params.put("id_workout",id);
+                params.put("email",Home.email);
+                return params;
+            }
+        };
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
     }
 
     public void load_detail(final String id){
@@ -101,7 +141,8 @@ public class CategorieDetailSub1 extends AppCompatActivity {
                                 tv_nama.setText(nama);
                                 tv_waktu.setText(waktu);
                                 tv_desc.setText(desc);
-                                iv_gambar.setImageResource(gambar);
+//                                iv_gambar.setImageResource(gambar);
+                                Glide.with(getApplicationContext()).load(gambar).into(iv_gambar);
                             }else{
 
                             }

@@ -1,6 +1,7 @@
 package com.example.yogafitnessapp.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.example.yogafitnessapp.CategorieDetailSub1;
 import com.example.yogafitnessapp.R;
 import com.example.yogafitnessapp.model.WeightlossModel;
 
@@ -21,12 +24,12 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHold
 
     Context context;
     private ArrayList<WeightlossModel> weightlossModelArrayList;
-    private RecyclerViewClickListener listener;
 
-    public CoursesAdapter(Context context, ArrayList<WeightlossModel> weightlossModelArrayList, RecyclerViewClickListener listener) {
+
+    public CoursesAdapter(Context context, ArrayList<WeightlossModel> weightlossModelArrayList) {
         this.context = context;
         this.weightlossModelArrayList = weightlossModelArrayList;
-        this.listener = listener;
+
     }
 
     @NonNull
@@ -40,8 +43,20 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull final CoursesAdapter.ViewHolder holder, final int position) {
-        holder.iv_weightloss.setImageResource(weightlossModelArrayList.get(position).getIv_weightloss());
+        //holder.iv_weightloss.setImageResource(R.drawable.bridge_pose);
+        Glide.with(this.context).load(weightlossModelArrayList.get(position).getGambar()).
+                placeholder(R.drawable.yoga1).into(holder.iv_weightloss);
         holder.tv_nama.setText(weightlossModelArrayList.get(position).getNama());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, CategorieDetailSub1.class);
+                i.putExtra("id",weightlossModelArrayList.get(position).getId());
+                i.putExtra("gambar",weightlossModelArrayList.get(position).getGambar());
+                context.startActivity(i);
+            }
+        });
     }
 
     @Override
@@ -50,9 +65,9 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHold
         return weightlossModelArrayList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements  View.OnClickListener {
+    public class ViewHolder extends RecyclerView.ViewHolder{
 
-        ImageView iv_weightloss;
+        public ImageView iv_weightloss;
         TextView tv_nama;
         public ViewHolder(View itemView) {
 
@@ -60,16 +75,12 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHold
 
             iv_weightloss=itemView.findViewById(R.id.iv_yoga);
             tv_nama = itemView.findViewById(R.id.tv_nama);
-            itemView.setOnClickListener(this);
+
         }
 
-        @Override
-        public void onClick(View view) {
-            listener.onClick(itemView, getAdapterPosition());
-        }
+
+
     }
 
-    public interface RecyclerViewClickListener{
-        void onClick(View v,int position);
-    }
+
 }

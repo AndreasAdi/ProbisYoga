@@ -7,11 +7,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.yogafitnessapp.adapter.ProfileAdapter;
 import com.example.yogafitnessapp.adapter.SubCategoryAdapter;
 import com.example.yogafitnessapp.model.ProfileModel;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CategoriesDetailSub2 extends AppCompatActivity {
 
@@ -30,6 +43,9 @@ public class CategoriesDetailSub2 extends AppCompatActivity {
             ,"Easy Yoga for Strength","Easy Yoga for Body Stretches","Easy Yoga for Neck & Back"};
 
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,11 +58,10 @@ public class CategoriesDetailSub2 extends AppCompatActivity {
 
         profileModelArrayList = new ArrayList<>();
 
-        for (int i = 0; i < iv_profile.length; i++) {
-            ProfileModel view1 = new ProfileModel(iv_profile[i],tv_name[i],tv_city[i]);
-            profileModelArrayList.add(view1);
-        }
+
         profileAdapter = new SubCategoryAdapter(CategoriesDetailSub2.this,profileModelArrayList);
         recyclerView.setAdapter(profileAdapter);
     }
+
+
 }

@@ -23,7 +23,7 @@
             <ImageView
                 android:id="@+id/iv_yoga"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="200dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/yoga_poses" />
 
@@ -46,7 +46,8 @@
                     android:paddingBottom="2dp"
                     android:text="1 WEEK"
                     android:textColor="#7e7d7d"
-                    android:textSize="8sp" />
+                    android:textSize="8sp"
+                    android:visibility="invisible" />
 
             </LinearLayout>
 
@@ -72,7 +73,8 @@
             android:paddingBottom="12dp"
             android:text="Lever 2"
             android:textColor="#a4a2a2"
-            android:textSize="13sp" />
+            android:textSize="13sp"
+            android:visibility="invisible" />
 
     </LinearLayout>
 

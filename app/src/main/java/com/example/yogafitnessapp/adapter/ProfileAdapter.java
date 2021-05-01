@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 import com.example.yogafitnessapp.R;
 import com.example.yogafitnessapp.model.ProfileModel;
 
@@ -43,9 +45,11 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
 
 
 
-        holder.iv_profile.setImageResource(profileModelArrayList.get(position).getIv_profile());
-        holder.tv_name.setText(profileModelArrayList.get(position).getTv_name());
-        holder.tv_city.setText(profileModelArrayList.get(position).getTv_city());
+//        holder.iv_profile.setImageResource(profileModelArrayList.get(position).getGambar());
+
+        Glide.with(context).load(profileModelArrayList.get(position).getGambar()).placeholder(R.drawable.yoga1).into(holder.iv_profile);
+        holder.tv_name.setText(profileModelArrayList.get(position).getNama());
+        holder.tv_city.setText(profileModelArrayList.get(position).getWaktu());
 
         if (position==0 || position==4 || position==5){
             holder.tv_follow.setTextColor(Color.parseColor("#ffffff"));

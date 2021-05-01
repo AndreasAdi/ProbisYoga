@@ -1,12 +1,15 @@
 package com.example.yogafitnessapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils.YouTubePlayerTracker;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 public class VideoActivity extends AppCompatActivity {
 
@@ -14,16 +17,16 @@ public class VideoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
-        YouTubePlayer y = findViewById(R.id.youtube_player_view);
 
-        y.loadVideo("dQw4w9WgXcQ",0);
-        YouTubePlayerTracker tracker = new YouTubePlayerTracker();
-        y.addListener(tracker);
+        YouTubePlayerView youTubePlayerView = findViewById(R.id.youtube_player_view);
+        getLifecycle().addObserver(youTubePlayerView);
 
-        tracker.getState();
-        tracker.getCurrentSecond();
-        float durasi = tracker.getVideoDuration();
-        tracker.getVideoId();
-
+        youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
+            @Override
+            public void onReady(@NonNull YouTubePlayer youTubePlayer) {
+                String videoId = "S0Q4gqBUs7c";
+                youTubePlayer.loadVideo(videoId, 0);
+            }
+        });
     }
 }

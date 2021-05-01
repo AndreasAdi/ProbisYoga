@@ -13,7 +13,10 @@
         app:videoId="4pKly2JojMw"
         app:autoPlay="true"
         app:showYouTubeButton="false"
-        app:showFullScreenButton="false" >
+        app:showVideoCurrentTime="false"
+        app:showVideoDuration="false"
+        app:showFullScreenButton="false"
+        app:showSeekBar="false">
 
     </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
 

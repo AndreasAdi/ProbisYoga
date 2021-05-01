@@ -92,6 +92,7 @@ public class Createacount extends AppCompatActivity {
             Intent i = new Intent(Createacount.this,Home.class);
 
             i.putExtra("username",account.getDisplayName());
+            i.putExtra("email",account.getEmail());
             startActivity(i);
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.

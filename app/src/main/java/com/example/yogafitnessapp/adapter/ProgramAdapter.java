@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.yogafitnessapp.R;
 import com.example.yogafitnessapp.model.WeightlossModel;
 
@@ -39,7 +40,8 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull final ProgramAdapter.ViewHolder holder, final int position) {
-        holder.iv_weightloss.setImageResource(weightlossModelArrayList.get(position).getIv_weightloss());
+        Glide.with(context).load(weightlossModelArrayList.get(position).getGambar()).into(holder.iv_weightloss);
+        //holder.iv_weightloss.setImageResource(weightlossModelArrayList.get(position).getIv_weightloss());
     }
 
     @Override

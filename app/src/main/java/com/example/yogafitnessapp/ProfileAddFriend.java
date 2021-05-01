@@ -42,11 +42,11 @@ public class ProfileAddFriend extends AppCompatActivity {
 
         profileModelArrayList = new ArrayList<>();
 
-        for (int i = 0; i < iv_profile.length; i++) {
-            ProfileModel view1 = new ProfileModel(iv_profile[i],tv_name[i],tv_city[i]);
-            profileModelArrayList.add(view1);
-        }
-        profileAdapter = new ProfileAdapter(ProfileAddFriend.this,profileModelArrayList);
-        recyclerView.setAdapter(profileAdapter);
+//        for (int i = 0; i < iv_profile.length; i++) {
+//            ProfileModel view1 = new ProfileModel(iv_profile[i],tv_name[i],tv_city[i]);
+//            profileModelArrayList.add(view1);
+//        }
+//        profileAdapter = new ProfileAdapter(ProfileAddFriend.this,profileModelArrayList);
+//        recyclerView.setAdapter(profileAdapter);
     }
 }
