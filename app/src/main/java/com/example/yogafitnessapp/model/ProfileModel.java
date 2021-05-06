@@ -5,11 +5,15 @@ public class ProfileModel {
     String gambar;
     String waktu;
     String nama;
+    String id;
+    String video;
 
-    public ProfileModel(String gambar, String waktu, String nama) {
+    public ProfileModel(String gambar, String waktu, String nama, String id, String video) {
         this.gambar = gambar;
         this.waktu = waktu;
         this.nama = nama;
+        this.id = id;
+        this.video = video;
     }
 
     public String getGambar() {
@@ -34,5 +38,21 @@ public class ProfileModel {
 
     public void setNama(String nama) {
         this.nama = nama;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getVideo() {
+        return video;
+    }
+
+    public void setVideo(String video) {
+        this.video = video;
     }
 }

@@ -45,7 +45,7 @@ public class CategorieDetailSub1 extends AppCompatActivity {
     private RecyclerView recyclerView;
 
     TextView tv_nama,tv_waktu,tv_desc,btn_add;
-    ImageView iv_gambar;
+    ImageView iv_gambar,btn_back;
     Toolbar toolbar;
     LinearLayout linear2;
     String id;
@@ -62,6 +62,7 @@ public class CategorieDetailSub1 extends AppCompatActivity {
         tv_nama = findViewById(R.id.tv_nama);
         iv_gambar = findViewById(R.id.iv_shop);
         btn_add = findViewById(R.id.btn_add);
+        btn_back = findViewById(R.id.btn_back);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -78,6 +79,10 @@ public class CategorieDetailSub1 extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void back(View v){
+        finish();
     }
 
     public void add_to_traning(){

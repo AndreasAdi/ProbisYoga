@@ -10,7 +10,7 @@
         android:id="@+id/youtube_player_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:videoId="4pKly2JojMw"
+        app:videoId=""
         app:autoPlay="true"
         app:showYouTubeButton="false"
         app:showVideoCurrentTime="false"
@@ -27,7 +27,38 @@
         android:layout_marginLeft="12dp"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp"
+        android:fontFamily="@font/avenir_medium"
         android:text="ini judul video"
         android:textColor="#000000"
         android:textSize="24sp" />
+
+
+    <com.androchef.happytimer.countdowntimer.CircularCountDownView
+        android:id="@+id/circularCountDownView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="70dp"
+        app:stroke_background_color="@color/colorGrey"
+        app:stroke_background_thickness="31dp"
+        app:stroke_foreground_color="@color/colorPrimaryDark"
+        app:stroke_foreground_thickness="40dp"
+        app:timer_text_color="@color/black"
+        app:timer_text_format="MINUTE_SECOND"
+        app:timer_text_isBold="true"
+        app:timer_text_shown="true"
+        app:timer_text_size="20sp"
+        app:timer_type="COUNT_DOWN" />
+
+    <ImageView
+        android:id="@+id/btn_play"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+        android:background="@drawable/pink_round"
+        android:clickable="true"
+        android:padding="10dp"
+        app:srcCompat="@android:drawable/ic_media_play"
+        android:focusable="true" />
+
+
 </LinearLayout>

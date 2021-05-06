@@ -40,20 +40,11 @@ public class Goals extends Fragment {
     private ArrayList<ProfileModel> profileModelArrayList;
     private RecyclerView recyclerView;
 
-    Integer[] iv_profile={R.drawable.yoga1,R.drawable.yoga1
-            ,R.drawable.yoga1,R.drawable.yoga1
-            ,R.drawable.yoga1,R.drawable.yoga1};
-
-    String[] tv_name={"DAY 01","DAY 02","DAY 03"
-            ,"DAY 04","DAY 05","DAY 06"};
-
-    String[] tv_city={"Easy Yoga for Strength","Easy Yoga for Body Stretches","Easy Yoga for Neck & Back"
-            ,"Easy Yoga for Strength","Easy Yoga for Body Stretches","Easy Yoga for Neck & Back"};
-
     ArrayList<String> listnama;
     ArrayList<String> listwaktu;
     ArrayList<String> listgambar;
     ArrayList<String> listid;
+    ArrayList<String> listvideo;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -72,7 +63,7 @@ public class Goals extends Fragment {
         listnama =new ArrayList<>();
         listwaktu = new ArrayList<>();
         listid = new ArrayList<>();
-
+        listvideo = new ArrayList<>();
 
         load_data();
 
@@ -98,6 +89,7 @@ public class Goals extends Fragment {
                             JSONArray gambar = jsonObject.getJSONArray("gambar");
                             JSONArray waktu = jsonObject.getJSONArray("waktu");
                             JSONArray id = jsonObject.getJSONArray("id");
+                            JSONArray video = jsonObject.getJSONArray("video");
                             String message=jsonObject.getString("message");
 
                             if(code==1){
@@ -106,6 +98,7 @@ public class Goals extends Fragment {
                                     listwaktu.add(waktu.getString(i));
                                     listgambar.add(getResources().getString(R.string.folder_gambar)+"/"+gambar.getString(i));
                                     listid.add(id.getString(i));
+                                    listvideo.add(video.getString(i));
                                 }
                                 load_view();
                                 System.out.println("tidak ada Ada error training");
@@ -145,7 +138,7 @@ public class Goals extends Fragment {
 
     private void load_view(){
         for (int i = 0; i < listgambar.size(); i++) {
-            ProfileModel view1 = new ProfileModel(listgambar.get(i),listwaktu.get(i)+" mins",listnama.get(i));
+            ProfileModel view1 = new ProfileModel(listgambar.get(i),listwaktu.get(i),listnama.get(i),listid.get(i),listvideo.get(i));
             profileModelArrayList.add(view1);
         }
 

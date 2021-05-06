@@ -43,12 +43,15 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
         //holder.iv_day1.setImageResource(profileModelArrayList.get(position).getIv_profile());
         Glide.with(context).load(profileModelArrayList.get(position).getGambar()).into(holder.iv_day1);
         holder.tv_nama.setText(profileModelArrayList.get(position).getNama());
-        holder.tv_waktu.setText(profileModelArrayList.get(position).getWaktu());
+        holder.tv_waktu.setText(String.format("%s mins", profileModelArrayList.get(position).getWaktu()));
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(context, VideoActivity.class);
+                i.putExtra("nama",profileModelArrayList.get(position).getNama());
+                i.putExtra("video",profileModelArrayList.get(position).getVideo());
+                i.putExtra("waktu",profileModelArrayList.get(position).getWaktu());
                 context.startActivity(i);
             }
         });
