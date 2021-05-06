@@ -115,9 +115,9 @@ public class Createacount extends AppCompatActivity {
         i = new Intent(this,Home.class);
         startActivity(i);*/
 
-        if (account!=null){
+/*        if (account!=null){
             signIn();
-        }
+        }*/
 
     }
 
