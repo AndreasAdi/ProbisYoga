@@ -2,6 +2,7 @@ package com.example.yogafitnessapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -38,18 +40,22 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import es.dmoral.toasty.Toasty;
+
+
 public class CategorieDetailSub1 extends AppCompatActivity {
 
     private SubCategoryAdapter profileAdapter;
     private ArrayList<ProfileModel> profileModelArrayList;
     private RecyclerView recyclerView;
 
-    TextView tv_nama,tv_waktu,tv_desc,btn_add;
+    TextView tv_nama,tv_waktu,tv_desc;
     ImageView iv_gambar,btn_back;
     Toolbar toolbar;
     LinearLayout linear2;
     String id;
     String gambar;
+    Button btn_add;
 
 
     @Override
@@ -85,6 +91,10 @@ public class CategorieDetailSub1 extends AppCompatActivity {
         finish();
     }
 
+    public void toast(){
+
+    }
+
     public void add_to_traning(){
         StringRequest stringRequest=new StringRequest(
                 Request.Method.POST,
@@ -100,9 +110,10 @@ public class CategorieDetailSub1 extends AppCompatActivity {
                             String waktu = jsonObject.getString("waktu");
                             String desc = jsonObject.getString("desc");*/
                             if(code==1){
-                                Toast.makeText(CategorieDetailSub1.this, "Berhasil menambahkan", Toast.LENGTH_SHORT).show();
-                            }else{
-                                Toast.makeText(CategorieDetailSub1.this, "Gagal menambahkan", Toast.LENGTH_SHORT).show();
+                                Toasty.success(CategorieDetailSub1.this, "Success!", Toast.LENGTH_SHORT, true).show();
+
+                            }else if(code==-2){
+                                Toasty.warning(CategorieDetailSub1.this, "Already Added To Training", Toast.LENGTH_SHORT, true).show();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -126,6 +137,7 @@ public class CategorieDetailSub1 extends AppCompatActivity {
         };
         RequestQueue requestQueue= Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+
     }
 
     public void load_detail(final String id){

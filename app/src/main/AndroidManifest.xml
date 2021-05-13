@@ -12,9 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".VideoActivity">
-
-        </activity>
+        <activity android:name=".quiz_selesai"></activity>
+        <activity android:name=".QuizActivity" />
+        <activity android:name=".VideoActivity" />
         <activity android:name=".Login" />
         <activity android:name=".Createacount">
             <intent-filter>

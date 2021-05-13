@@ -26,6 +26,8 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import es.dmoral.toasty.Toasty;
+
 public class Signup extends AppCompatActivity {
 
     ImageView iv_close;
@@ -75,7 +77,9 @@ public class Signup extends AppCompatActivity {
                             int code=jsonObject.getInt("code");
                             String message=jsonObject.getString("message");
                             if(code==1){
-                                Toast.makeText(Signup.this,message,Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(Signup.this,message,Toast.LENGTH_SHORT).show();
+                                Toasty.success(Signup.this,message,Toast.LENGTH_SHORT).show();
+                                finish();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

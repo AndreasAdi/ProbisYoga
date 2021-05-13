@@ -1,6 +1,9 @@
 package com.example.yogafitnessapp.model;
 
-public class ProfileModel {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class ProfileModel implements Parcelable {
 
     String gambar;
     String waktu;
@@ -15,6 +18,26 @@ public class ProfileModel {
         this.id = id;
         this.video = video;
     }
+
+    protected ProfileModel(Parcel in) {
+        gambar = in.readString();
+        waktu = in.readString();
+        nama = in.readString();
+        id = in.readString();
+        video = in.readString();
+    }
+
+    public static final Creator<ProfileModel> CREATOR = new Creator<ProfileModel>() {
+        @Override
+        public ProfileModel createFromParcel(Parcel in) {
+            return new ProfileModel(in);
+        }
+
+        @Override
+        public ProfileModel[] newArray(int size) {
+            return new ProfileModel[size];
+        }
+    };
 
     public String getGambar() {
         return gambar;
@@ -54,5 +77,19 @@ public class ProfileModel {
 
     public void setVideo(String video) {
         this.video = video;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(gambar);
+        parcel.writeString(waktu);
+        parcel.writeString(nama);
+        parcel.writeString(id);
+        parcel.writeString(video);
     }
 }

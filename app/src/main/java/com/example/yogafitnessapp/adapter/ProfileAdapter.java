@@ -1,10 +1,12 @@
 package com.example.yogafitnessapp.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -12,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.yogafitnessapp.R;
+import com.example.yogafitnessapp.fragment.Profile;
 import com.example.yogafitnessapp.model.ProfileModel;
 
 import java.util.ArrayList;
@@ -55,6 +58,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
             holder.tv_follow.setTextColor(Color.parseColor("#ffffff"));
             holder.tv_follow.setBackgroundResource(R.drawable.rect_pink_radius);
         }
+
 
     }
 

@@ -52,6 +52,8 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
                 i.putExtra("nama",profileModelArrayList.get(position).getNama());
                 i.putExtra("video",profileModelArrayList.get(position).getVideo());
                 i.putExtra("waktu",profileModelArrayList.get(position).getWaktu());
+                i.putExtra("list_video",profileModelArrayList);
+                i.putExtra("index",position);
                 context.startActivity(i);
             }
         });

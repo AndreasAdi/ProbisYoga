@@ -1,10 +1,12 @@
 package com.example.yogafitnessapp.fragment;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -24,6 +26,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.example.yogafitnessapp.Home;
+import com.example.yogafitnessapp.QuizActivity;
 import com.example.yogafitnessapp.R;
 import com.example.yogafitnessapp.Settings;
 import com.example.yogafitnessapp.adapter.Seetings1Adapter;
@@ -94,12 +97,21 @@ public class Profile extends Fragment {
         TextView tv_logout = view.findViewById(R.id.tv_logout);
         progressBar = view.findViewById(R.id.progress_bar);
         tv_level = view.findViewById(R.id.tv_level);
+        Button btn_quiz = view.findViewById(R.id.btn_quiz);
 
 
         tv_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 signOut();
+            }
+        });
+
+        btn_quiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               Intent i = new Intent(getActivity(),QuizActivity.class);
+               getActivity().startActivity(i);
             }
         });
 
