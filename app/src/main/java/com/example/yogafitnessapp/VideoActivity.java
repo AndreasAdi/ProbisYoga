@@ -103,6 +103,12 @@ public class VideoActivity extends AppCompatActivity {
                      btn_play.setImageResource(R.drawable.ic_pause);
 
                 }
+
+
+            }
+
+            public void onError(@NonNull YouTubePlayer youTubePlayer, @NonNull PlayerConstants.PlayerError error){
+                youTubePlayer.loadVideo(video, 0);
             }
 
 
@@ -143,6 +149,7 @@ public class VideoActivity extends AppCompatActivity {
                             waktu = Integer.parseInt(profileModelArrayList.get(index).getWaktu())*60;
                             circularCountDownView.stopTimer();
                             circularCountDownView.initTimer(waktu);
+                            tv_judul.setText(profileModelArrayList.get(index).getNama());
                         }
                     });
                 }
@@ -161,6 +168,7 @@ public class VideoActivity extends AppCompatActivity {
                             waktu = Integer.parseInt(profileModelArrayList.get(index).getWaktu())*60;
                             circularCountDownView.stopTimer();
                             circularCountDownView.initTimer(waktu);
+                            tv_judul.setText(profileModelArrayList.get(index).getNama());
                         }
                     });
                 }
